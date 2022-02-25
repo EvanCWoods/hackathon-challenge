@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Body  container styling */
+body{
+    background-color: #cecece81;
+}
+
+.navbar {
+    text-align: center;
+    background-color: rgb(148, 60, 93);
+    align-items: center;
+}
+
+.title  {
+    align-items: center;
+    /* font-size: ; */
+    color: #cecece81 ;
+}
+.server {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Container setup */
+.serverlist {
+    padding: 10px;
+}
+
+.teamcard0{
+    padding: 110px 10px;
+    animation-timing-function: ease-in;
+}
+
+.teamcard1 {
+    padding: 110px 10px;
+
+    animation-timing-function: ease-in;
+}
+
+
+/* Server container styling */
+
+#name-style {
+    color: #582873;
+}
+.list-group-item {
+    color:  #9f177a;
+}
+
+/* additional styling */
+.buffer {
+    padding: 100px;
+}
