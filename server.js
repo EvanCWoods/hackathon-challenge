@@ -12,7 +12,16 @@ var connection = mysql.createConnection({
   password : 'root',
   database : 'server_db'
 });
+let data;
 
+connection.query("SELECT * FROM dummy_server", (err, results) => {
+    if (err) {
+        console.log(`Error \n ${err}`)
+    } else {
+        console.log(results);
+        data=results
+    }
+});
 
 // allow access to files in public folder
 app.use(express.static("public"));
@@ -25,11 +34,12 @@ app.get("/", (req, res) => {
 
 // api end point to handle database queries
 app.get("/api/servers", (req, res) => {
-    const con = connection.connect("SELECT * FROM dummy_server", (err, results) => {
+    connection.query("SELECT * FROM dummy_server", (err, results) => {
         if (err) {
             console.log(`Error \n ${err}`)
         } else {
             console.log(results);
+            res.json(results);
         }
     });
 });
@@ -39,3 +49,5 @@ app.get("/api/servers", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`);
 });
+
+module.export = data;
